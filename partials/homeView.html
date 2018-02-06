@@ -1,17 +1,11 @@
+<div class="col-sm-12">
+    <ul ng-model="rideArr">
+        <li>{{rideArr[0].type}}</li>
+        <li>{{rideArr[0].make}}</li>
+        <li>{{rideArr[0].model}}</li>
+        <li>{{rideArr[0].year}}</li>
+        <li>{{rideArr[0].price}}</li>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            {{message}}
-        </div>
-        <div class="col-sm">
-            {{$scope.message}} </div>
-        <div class="col-sm">
-            {{message}} </div>
-        <div class="col-sm">
-            {{message}} </div>
-    </div>
+        <img ng-src="{{rideArr[0].img}}">
+    </ul>
 </div>
-
-<progress value="0" max="100" id="uploader">0%</progress>
-    <input type="file" value="upload" id="fileButton">
