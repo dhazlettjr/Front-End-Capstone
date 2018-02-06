@@ -19,10 +19,13 @@ angular.module('rent')
           function error(err) {
 
           }
-          function complete() {
+          function complete(data) {
+              console.log(data);
 
           }
-
+storageRef.getDownloadURL().then(function(url){
+    console.log(url);
+});
       });
 
 

@@ -44,5 +44,5 @@
     <button class="btn btn-default" ng-click="saveRides()">Submit</button>
 </div>
 
-<progress value="0" max="100" id="uploader">0%</progress>
+<progress ng-controller="UploadCtrl" value="0" max="100" id="uploader">0%</progress>
     <input type="file" value="upload" id="fileButton">
