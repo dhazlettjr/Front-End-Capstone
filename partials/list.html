@@ -1,0 +1,48 @@
+<div class="col-xs-12">
+    <h1>List New Ride</h1>
+    <div class="form-group">
+        <label>Type</label>
+        
+        <input type="text" class="form-control" ng-model="newList.type" placeholder="Type of ride" />
+    </div>
+    <div class="form-group">
+        <label>Make</label>
+        <input type="text" class="form-control" ng-model="newList.make" placeholder="Make of ride" />
+    </div>
+    <div class="form-group">
+        <label>Model</label>
+        <input type="text" class="form-control" ng-model="newList.model" placeholder="Model of ride" />
+    </div>
+    <div class="form-group">
+        <label>Location</label>
+        <input type="text" class="form-control" ng-model="newList.location" placeholder="Location of ride" />
+    </div>
+    <div class="form-group">
+        <label>Year</label>
+        <input type="text" class="form-control" ng-model="newList.year" placeholder="Year of ride" />
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="text" class="form-control" ng-model="newList.price" placeholder="$$$$"
+        />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" ng-model="newList.description" placeholder="Description of ride"
+        />
+    </div>
+    <div class="form-group">
+        <label>Features</label>
+        <input type="text" class="form-control" ng-model="newList.features" placeholder="Features of ride"
+        />
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input type="text" class="form-control" ng-model="newList.img" placeholder="Image"
+        />
+    </div>
+    <button class="btn btn-default" ng-click="saveRides()">Submit</button>
+</div>
+
+<progress value="0" max="100" id="uploader">0%</progress>
+    <input type="file" value="upload" id="fileButton">
