@@ -1,16 +1,5 @@
 "use strict";
 
-// let config = {
-//     apiKey: "AIzaSyDQHt0Mzr35CueolsDnVieirIfocLGWXZU",
-//     authDomain: "rent-46120.firebaseapp.com",
-//     databaseURL: "https://rent-46120.firebaseio.com",
-//     projectId: "rent-46120",
-//     storageBucket: "rent-46120.appspot.com",
-//     messagingSenderId: "161015486110"
-//   };
-
-  //firebase.initializeApp(config);
-
 angular.module("rent", ["ngRoute"])
 
 .config($routeProvider => {
@@ -30,10 +19,6 @@ angular.module("rent", ["ngRoute"])
     .when ("/list", {
         templateUrl: "partials/list.html",
         controller: "ListCtrl"
-    })
-    .when ("/upload", {
-        templateUrl: "partials/list.html",
-        controller: "UploadCtrl"
     })
     .otherwise("/");
     

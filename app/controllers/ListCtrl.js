@@ -13,7 +13,7 @@ angular.module("rent").controller("ListCtrl", function($scope, $location, Produc
         price: "",
         description: "",
         features: "",
-        img: "",
+        img: storageRef.getDownloadURL(),
         uid: ""
     };
 
