@@ -1,0 +1,51 @@
+{
+    "vehicles": [{
+            "type": "car",
+            "make": "Caddillac",
+            "model": "CTS",
+            "location": "Nashville",
+            "year": "2018",
+            "price": "$150",
+            "description": "Super Fast",
+            "features": "AWD, leather, sun-roof",
+            "img": "https://firebasestorage.googleapis.com/v0/b/rent-46120.appspot.com/o/cts.jpeg?alt=media&token=cd02373b-896e-4d5f-9b69-81b132f9beaa",
+            "uid": "AIzaSyDQHt0Mzr35CueolsDnVieirIfocLGWXZU"
+        },
+
+        {
+            "type": "car",
+            "make": "Caddillac",
+            "model": "CTS",
+            "location": "Nashville",
+            "year": "2018",
+            "price": "$150",
+            "description": "Super Fast",
+            "features": "AWD, leather, sun-roof",
+            "img": "https://firebasestorage.googleapis.com/v0/b/rent-46120.appspot.com/o/cts.jpeg?alt=media&token=cd02373b-896e-4d5f-9b69-81b132f9beaa",
+            "uid": "AIzaSyDQHt0Mzr35CueolsDnVieirIfocLGWXZU"
+        },
+
+        {
+            "type": "car",
+            "make": "Caddillac",
+            "model": "CTS",
+            "location": "Nashville",
+            "year": "2018",
+            "price": "$150",
+            "description": "Super Fast",
+            "features": "AWD, leather, sun-roof",
+            "img": "https://firebasestorage.googleapis.com/v0/b/rent-46120.appspot.com/o/cts.jpeg?alt=media&token=cd02373b-896e-4d5f-9b69-81b132f9beaa",
+            "uid": "AIzaSyDQHt0Mzr35CueolsDnVieirIfocLGWXZU"
+        }
+
+    ],
+
+    "owners": [
+
+        {
+            "uid": "AIzaSyDQHt0Mzr35CueolsDnVieirIfocLGWXZU",
+            "email": "d.hazlett.jr@gmail.com",
+            "phone": "9316399655"
+        }
+    ]
+}
