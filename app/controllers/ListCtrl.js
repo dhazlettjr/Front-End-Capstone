@@ -31,10 +31,10 @@ angular.module("rent").controller("ListCtrl", function ($scope, $location, Stora
         storageRef.getDownloadURL().then(function (url) {
             console.log(url);
             $scope.newList.img = url;
-            ProductsFactory.saveRides($scope.newList);
+            // ProductsFactory.saveRides($scope.newList);
             $location.url("/list");
-            $scope.ride.id = firebase.auth().currentUser.uid;
-            ProductsFactory.addRide($scope.ride)
+            $scope.newList.uid = firebase.auth().currentUser.uid;
+            ProductsFactory.saveRides($scope.newList)
                 .then((data) => {
 
                 });
