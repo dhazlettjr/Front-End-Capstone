@@ -11,6 +11,7 @@ angular
             AuthFactory.createUser($scope.account).then(user => {
                     console.log("newUser", user);
                     $scope.login();
+                    $window.location.href = "#!/home";
                 })
                 .catch(function ({
                     code,
@@ -23,7 +24,7 @@ angular
         $scope.login = () => {
             AuthFactory.loginUser($scope.account).then(user => {
                     console.log("logged in user", user);
-                    $window.location.href = "#!/notes";
+                    $window.location.href = "#!/home";
                 })
                 .catch((err) => {
                     console.log(err);
