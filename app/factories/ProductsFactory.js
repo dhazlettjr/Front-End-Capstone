@@ -12,9 +12,9 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
                     ({
                         data
                     }) => {
-                        //let keys = Object.keys(data);
-                        //console.log(uid);
-                        //keys.forEach(key => data[key].uid = key);
+                        let keys = Object.keys(data);
+                        
+                        keys.forEach(key => data[key].id = key);
                         resolve(data);
                     })
                 .catch((err) => {
