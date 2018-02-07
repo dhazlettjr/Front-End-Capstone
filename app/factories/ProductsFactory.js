@@ -12,7 +12,8 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
                 .then(
                     ({
                         data
-                    }) => {console.log(data);
+                    }) => {
+                        console.log(data);
                         let keys = Object.keys(data);
 
                         keys.forEach(key => data[key].id = key);
@@ -38,9 +39,25 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
                 });
         });
     };
+
+    let deleteRides = (carID) => {
+        return $q(function (resolve, reject) {
+            $http
+                .delete(`${FBCreds.url}/vehicles/${carID}.json`)
+                .then(
+                    (data) => {
+                        resolve(data);
+                        console.log("new items posted", data);
+                    })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    };
     // this will return the firebase data
     return {
         getRides,
-        saveRides
+        saveRides,
+        deleteRides
     };
 });
