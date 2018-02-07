@@ -20,6 +20,10 @@ angular.module("rent", ["ngRoute"])
         templateUrl: "partials/list.html",
         controller: "ListCtrl"
     })
+    .when ("/user", {
+        templateUrl: "partials/myList.html",
+        controller: "MyListCtrl"
+    })
     .otherwise("/");
     
 })
