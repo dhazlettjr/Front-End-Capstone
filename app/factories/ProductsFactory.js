@@ -4,16 +4,17 @@
 angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) {
 
     // Return a promise with XHR
-    let getRides = () => {
+    let getRides = (uid) => {
+        console.log(uid);
         return $q(function (resolve, reject) {
             $http
-                .get(`${FBCreds.url}/vehicles.json`)
+                .get(`${FBCreds.url}/vehicles.json?orderBy="uid"&equalTo="${uid}"`)
                 .then(
                     ({
                         data
-                    }) => {
+                    }) => {console.log(data);
                         let keys = Object.keys(data);
-                        
+
                         keys.forEach(key => data[key].id = key);
                         resolve(data);
                     })
