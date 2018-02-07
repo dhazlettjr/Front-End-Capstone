@@ -1,17 +1,22 @@
+'use strict';
 
-// "use strict";
+angular.module('rent')
 
-// angular.module("rent").factory("StorageFactory", function ($q, $http, FBCreds) {
+    .factory('StorageFactory', function () {
 
-//   let postToFB = () => {
-//     return $q(function (resolve, reject) {
-//       $http.post(`${FBCreds.storageBucket}`)
-//         .then((data) => {
-//           resolve(data);
-//         })
-//         .catch((err) => {
-//           reject(err);
-//         });
-//     });
-// };
-// });
+        let pushFile = (e, uploader) => {
+            let file = e.target.files[0];
+            let storageRef = firebase.storage().ref(file.name);
+            let task = storageRef.put(file);
+
+            task.on('state_changed', function progress(snapshot) {
+                let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                uploader.value = percentage;
+
+            });
+        };
+        return {pushFile};
+    });
+
+
+//write named

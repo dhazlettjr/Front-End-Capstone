@@ -11,7 +11,12 @@ angular.module("rent")
         console.log("hey", rideData);
 
         //object.entries is a simple way to push an object into an array
-        $scope.rideArr = rideData;
+        $scope.rideArr = rideData.id;
       });
+    });
 
-  });
+
+        //object.entries is a simple way to push an object into an array
+        //$scope.rideArr = rideData;
+      
+    

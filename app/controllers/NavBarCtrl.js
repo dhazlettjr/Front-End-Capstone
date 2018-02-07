@@ -2,7 +2,7 @@
 
 angular.module('rent')
 
-  .controller('NavBarCtrl', function ($scope, $location) {
+  .controller('NavBarCtrl', function ($scope, $window, $location) {
 
     $scope.isActive = function (path) {
 
@@ -15,8 +15,8 @@ angular.module('rent')
       return currentPath === path.split('/')[1];
 
     };
-    // $scope.clickLogout = () =>
-    //   AuthFactory.logout()
-    //   .then(() => $window.location.href = "#!/login");
+    //  $scope.clickLogout = () =>
+    //    AuthFactory.logout()
+    //    .then(() => $window.location.href = "#!/login");
 
   });
