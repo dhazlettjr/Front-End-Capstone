@@ -5,18 +5,16 @@ angular.module("rent")
 
 
 
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        ProductsFactory.getRides(firebase.auth().currentUser.uid)
+          .then((data) => {
+            console.log("hey", data);
 
-    ProductsFactory.getRides()
-      .then((rideData) => {
-        console.log("hey", rideData);
-
-        //object.entries is a simple way to push an object into an array
-        $scope.rideArr = rideData.id;
-      });
+            //object.entries is a simple way to push an object into an array
+            $scope.rideArr = Object.values(data);
+            console.log($scope.rideArr);
+          });
+      }
     });
-
-
-        //object.entries is a simple way to push an object into an array
-        //$scope.rideArr = rideData;
-      
-    
+  });

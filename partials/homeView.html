@@ -1,11 +1,31 @@
-<div class="col-sm-12">
-    <ul ng-model="rideArr">
-        <li>{{rideArr.id.type}}</li>
-        <li>{{rideArr.make}}</li>
-        <li>{{rideArr.model}}</li>
-        <li>{{rideArr.year}}</li>
-        <li>{{rideArr.price}}</li>
-
-        <img ng-src="{{rideArr.img}}">
-    </ul>
+<div class="dropdown">
+    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Choose Ride
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Car</a>
+        <a class="dropdown-item" href="#">Truck</a>
+        <a class="dropdown-item" href="#">Boat</a>
+        <a class="dropdown-item" href="#">Bike</a>
+        <a class="dropdown-item" href="#">ATV</a>
+    </div>
 </div>
+
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+
+    <ul ng-repeat="ride in rideArr">
+        <li>{{ride.location}}</li>
+       <li>{{ride.make}}</li>
+        <li>{{ride.model}}</li>
+        <li>{{ride.year}}</li>
+        <li>{{ride.price}}</li>
+
+        <img ng-src="{{ride.img}}">
+        </ul>

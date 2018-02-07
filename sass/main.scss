@@ -15,3 +15,8 @@ body {
     width: 50%;
     margin-bottom: 10px;
 }
+
+.ridegrid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
