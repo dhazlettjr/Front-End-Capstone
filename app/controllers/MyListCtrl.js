@@ -3,16 +3,19 @@
 "use strict";
 
 angular.module("rent")
-  .controller("MyListCtrl", function ($scope,$location, $route, ProductsFactory) {
+  .controller("MyListCtrl", function ($scope,$location,$window, $route, ProductsFactory) {
 
-
+//this function will pick a specific car id to delete
 $scope.deleteRides = (carID) => {
     ProductsFactory.deleteRides(carID)
     .then(() => {
+      //once car is deleted, it will revert back to the home page
         ProductsFactory.getRides();
-        $location.url("#!/home");
+        $location.url("/home");
     });
 };
+
+  //this allows the user to be re-authenticated prior to page load
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         ProductsFactory.getRides(firebase.auth().currentUser.uid)

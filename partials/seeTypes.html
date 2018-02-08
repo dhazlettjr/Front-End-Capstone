@@ -1,0 +1,13 @@
+<div>
+        <ul ng-repeat="ride in rideArr">
+            <li>{{ride.data.location}}</li>
+            <li>{{ride.make}}</li>
+            <li>{{ride.model}}</li>
+            <li>{{ride.year}}</li>
+            <li>{{ride.price}}</li>
+    
+            <img ng-src="{{ride.img}}">
+            <button ng-click="getOneRide(ride.id)" type="button" class="btn btn-info">See Ride Details</button>
+    
+        </ul>
+    </div>

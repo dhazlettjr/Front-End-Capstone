@@ -4,11 +4,13 @@
         Choose Ride
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Car</a>
-        <a class="dropdown-item" href="#">Truck</a>
-        <a class="dropdown-item" href="#">Boat</a>
-        <a class="dropdown-item" href="#">Bike</a>
-        <a class="dropdown-item" href="#">ATV</a>
+        <a ng-href="#!/type">
+            <option class="dropdown-item" ng-click="getRidesByType('car')">Car</option>
+        </a>
+        <option class="dropdown-item" ng-click="getRidesByType('truck')">Truck</option>
+        <option class="dropdown-item" ng-click="getRidesByType('boat')">Boat</option>
+        <option class="dropdown-item" ng-click="getRidesByType('bike')">Bike</option>
+        <option class="dropdown-item" ng-click="getRidesByType('ATV')">ATV</option>
     </div>
 </div>
 
@@ -19,13 +21,18 @@
     </form>
 </nav>
 
-
+<div ng-init="getAllRides()">
     <ul ng-repeat="ride in rideArr">
-        <li>{{ride.location}}</li>
-       <li>{{ride.make}}</li>
-        <li>{{ride.model}}</li>
-        <li>{{ride.year}}</li>
-        <li>{{ride.price}}</li>
+        <li>{{ride[1].location}}</li>
+        <li>{{ride[1].make}}</li>
+        <li>{{ride[1].model}}</li>
+        <li>{{ride[1].year}}</li>
+        <li>{{ride[1].price}}</li>
 
-        <img ng-src="{{ride.img}}">
-        </ul>
+        <img ng-src="{{ride[1].img}}">
+        <a ng-href="#!/details/{{ride[0]}}">
+            <button type="button" class="btn btn-info">See Ride Details</button>
+        </a>
+        <p>{{ride.id}}</p>
+    </ul>
+</div>
