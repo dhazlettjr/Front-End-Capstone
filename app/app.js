@@ -24,11 +24,23 @@ angular.module("rent", ["ngRoute"])
         templateUrl: "partials/myList.html",
         controller: "MyListCtrl"
     })
-    .otherwise("/");
+    .when ("/type", {
+        templateUrl: "partials/seeTypes.html",
+        controller: "homeViewCtrl"
+    })
+    .when ("/details/:id", {
+        templateUrl: "partials/rideDetails.html",
+        controller: "soloRideCtrl"
+    })
+    .when('/list/:carID/edit', {
+        templateUrl: 'partials/list.html',
+        controller: 'editCtrl'
     
-})
+});
 
+})
   .run(FBCreds => {
     firebase.initializeApp(FBCreds);
  });
+
 
