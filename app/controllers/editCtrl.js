@@ -1,20 +1,22 @@
 "use strict";
 angular.module("rent")
 .controller("editCtrl", function($scope, $location, $routeParams, ProductsFactory){
-  $scope.title = "Edit Ride";
+  $scope.title = "Update Ride";
   $scope.btnText = "Update";
-  $scope.newTask = {};
+  $scope.newList = {};
 
-  ProductsFactory.getSingleRide($routeParams.carID)
+  ProductsFactory.getSingleRide($routeParams.id)
   .then(function successCallback(response){
-      $scope.newRide = response;
+      $scope.newList = response.data;
+      console.log('new list', $scope.newList);
   });
+  
     
   $scope.saveRides = function(){
-    ProductsFactory.updateRide($routeParams.carID, $scope.newRide)
+    ProductsFactory.updateRide($routeParams.id, $scope.newList)
     .then(function successCallback(response) {
       console.log(response);
-      $location.url("/user");
+      $location.url("/home");
     });
   };
 });
