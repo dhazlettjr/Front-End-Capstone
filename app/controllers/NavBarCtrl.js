@@ -15,8 +15,4 @@ angular.module('rent')
       return currentPath === path.split('/')[1];
 
     };
-    //  $scope.clickLogout = () =>
-    //    AuthFactory.logout()
-    //    .then(() => $window.location.href = "#!/login");
-
   });

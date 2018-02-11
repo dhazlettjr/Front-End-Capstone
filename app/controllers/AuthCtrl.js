@@ -17,7 +17,7 @@ angular
                     code,
                     message
                 }) {
-                    console.log("Oops", code, message);
+
                 });
         };
 
@@ -37,5 +37,5 @@ angular
                     console.log("logged out", data);
                 });
         };
-        // $scope.logout();
+         $scope.logout();
     });

@@ -1,9 +1,24 @@
 "use strict";
 
+let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
+    AuthFactory.isAuthenticated()
+    .then( (user) => {
+      console.log("user???", user );
+      if(user) {
+        console.log("Authenticated user. Go ahead");
+        resolve();
+      } else {
+        console.log("Not Authenticated user. Go away");
+        reject();
+      }
+    }); 
+  });
+
 angular.module("rent", ["ngRoute"])
 
 .config($routeProvider => {
     $routeProvider
+    
 
     // routes and configs go here, chained onto the module definition
     
@@ -11,6 +26,7 @@ angular.module("rent", ["ngRoute"])
     .when("/home", {
         templateUrl: "partials/homeView.html",
         controller: "homeViewCtrl"
+        
     })
     .when ("/login", {
         templateUrl: "partials/Login.html",
@@ -18,17 +34,36 @@ angular.module("rent", ["ngRoute"])
     })
     .when ("/list", {
         templateUrl: "partials/list.html",
-        controller: "ListCtrl"
+        controller: "ListCtrl",
+        resolve: {isAuth}
     })
     .when ("/user", {
         templateUrl: "partials/myList.html",
-        controller: "MyListCtrl"
+        controller: "MyListCtrl",
+        resolve: {isAuth}
     })
-    .otherwise("/");
-    
-})
+    .when ("/type", {
+        templateUrl: "partials/seeTypes.html",
+        controller: "homeViewCtrl"
+    })
+    .when ("/details/:id", {
+        templateUrl: "partials/rideDetails.html",
+        controller: "soloRideCtrl",
+        resolve: {isAuth}
+    })
+    .when('/list/:id/edit', {
+        templateUrl: 'partials/list.html',
+        controller: 'editCtrl',
+        resolve: {isAuth}
+    })
+    .when ("/map", {
+        templateUrl: "partials/map.html",
+        controller: "mapCtrl"
+    });
 
+})
   .run(FBCreds => {
     firebase.initializeApp(FBCreds);
  });
+
 

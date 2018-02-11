@@ -3,18 +3,19 @@
 angular.module("rent")
   .controller("homeViewCtrl", function ($scope, ProductsFactory) {
 
+    $scope.getAllRides = () => {
 
+      ProductsFactory.getAllRides()
+        .then((data) => {
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        ProductsFactory.getRides(firebase.auth().currentUser.uid)
-          .then((data) => {
-            console.log("hey", data);
-
-            //object.entries is a simple way to push an object into an array
-            $scope.rideArr = Object.values(data);
-            console.log($scope.rideArr);
-          });
-      }
-    });
+          //object.entries is a simple way to push an object into an array
+          $scope.rideArr = Object.entries(data.data);
+        });
+    };
+    //this will allow me to get rides by type with a drop down menu
+    $scope.getRidesByType = (type) => {
+      ProductsFactory.getRidesByType(type)
+        .then((data) => {
+        });
+    };
   });

@@ -5,7 +5,6 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
 
     // Return a promise with XHR
     let getRides = (uid) => {
-        console.log(uid);
         return $q(function (resolve, reject) {
             $http
                 .get(`${FBCreds.url}/vehicles.json?orderBy="uid"&equalTo="${uid}"`)
@@ -13,10 +12,43 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
                     ({
                         data
                     }) => {
-                        console.log(data);
                         let keys = Object.keys(data);
 
                         keys.forEach(key => data[key].id = key);
+                        resolve(data);
+                    })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    };
+
+    let getRidesByType = (type) => {
+
+        return $q(function (resolve, reject) {
+            $http
+                .get(`${FBCreds.url}/vehicles.json?orderBy="type"&equalTo="${type}"`)
+                .then(
+                    ({
+                        data
+                    }) => {
+                        let keys = Object.keys(data);
+
+                        keys.forEach(key => data[key].id = key);
+                        resolve(data);
+                    })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    };
+
+    let getAllRides = () => {
+        return $q(function (resolve, reject) {
+            $http
+                .get(`${FBCreds.url}/vehicles.json`)
+                .then(
+                    (data) => {
                         resolve(data);
                     })
                 .catch((err) => {
@@ -40,6 +72,22 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
         });
     };
 
+    let getSingleRide = (carID) => {
+        console.log('one ride', carID);
+        return $q(function (resolve, reject) {
+            $http
+                .get(`${FBCreds.url}/vehicles/${carID}.json`)
+                .then(
+                    (data) => {
+                        resolve(data);
+                        console.log("get single ride", data);
+                    })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    };
+
     let deleteRides = (carID) => {
         return $q(function (resolve, reject) {
             $http
@@ -47,17 +95,34 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
                 .then(
                     (data) => {
                         resolve(data);
-                        console.log("new items posted", data);
                     })
                 .catch((err) => {
                     reject(err);
                 });
         });
     };
+
+    let updateRide = (carID,list) => {
+        return $q(function (resolve, reject) {
+            $http
+                .patch(`${FBCreds.url}/vehicles/${carID}.json`,JSON.stringify(list))
+                .then((data) => {
+                    resolve(data);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+
+    };
     // this will return the firebase data
     return {
         getRides,
         saveRides,
-        deleteRides
+        deleteRides,
+        getAllRides,
+        getRidesByType,
+        getSingleRide,
+        updateRide
     };
 });
