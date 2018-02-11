@@ -3,6 +3,7 @@
 // this will set up the controller for the project
 angular.module("rent").controller("ListCtrl", function ($scope, $location, StorageFactory, ProductsFactory) {
 
+    $scope.title = "List New Ride";
     //this is attached to the input field partial
     $scope.newList = {
         type: "",
