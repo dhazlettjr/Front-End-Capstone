@@ -1,15 +1,18 @@
 <nav class="navbar navbar-light bg-light">
 </nav>
 
+<div class="new" class="col-sm-3">
+    <ul class="box" ng-repeat="ride in rideArr">
+        <li>{{ride.location}}</li>
+        <li>{{ride.make}}</li>
+        <li>{{ride.model}}</li>
+        <li>{{ride.year}}</li>
+        <li>{{ride.price}}</li>
 
-<ul ng-repeat="ride in rideArr">
-    <li>{{ride.location}}</li>
-    <li>{{ride.make}}</li>
-    <li>{{ride.model}}</li>
-    <li>{{ride.year}}</li>
-    <li>{{ride.price}}</li>
-
-    <img ng-src="{{ride.img}}">
-    <button ng-click="deleteRides(ride.id)" type="button" class="btn btn-danger">Delete</button>
-    <button class="btn btn-info"><a ng-href="#/list/{{carID}}/edit">Edit</a></button>
-</ul>
+        <img ng-src="{{ride.img}}">
+        <button ng-click="deleteRides(ride.id)" type="button" class="btn btn-danger">Delete</button>
+        <button class="btn btn-info">
+            <a ng-href="#!/list/{{ride.id}}/edit">Edit</a>
+        </button>
+    </ul>
+</div>
