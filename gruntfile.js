@@ -15,7 +15,7 @@ module.exports = function(grunt) {
           predef: ["document", "console", "firebase"],
           esnext: true,
           globalstrict: true,
-          globals: { angular: true }
+          globals: { angular: true, google: true }
         },
         files: ["./app/**/*.js"]
       },
