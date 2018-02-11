@@ -102,10 +102,10 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
         });
     };
 
-    let updateRide = (carID) => {
+    let updateRide = (carID,list) => {
         return $q(function (resolve, reject) {
             $http
-                .patch(`${FBCreds.url}/vehicles/${carID}.json`)
+                .patch(`${FBCreds.url}/vehicles/${carID}.json`,JSON.stringify(list))
                 .then((data) => {
                     resolve(data);
                 })
@@ -122,6 +122,7 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
         deleteRides,
         getAllRides,
         getRidesByType,
-        getSingleRide
+        getSingleRide,
+        updateRide
     };
 });
