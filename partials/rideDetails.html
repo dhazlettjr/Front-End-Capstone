@@ -7,6 +7,23 @@
         <p>{{soloRide.price}}</p>
     </div>
 
-        <img ng-src="{{soloRide.img}}">
+    <img ng-src="{{soloRide.img}}">
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">I Want This</button>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-background">
 
+                <div ng-model="soloRide">
+                    
+                    <p class="model">{{soloRide.make}}</p>
+                    <p class="model">{{soloRide.model}}</p>
+                    <p class="model">{{soloRide.year}}</p>
+                    <p class="model">{{soloRide.price}}</p>
+                </div>
+
+            </div>
+        </div>
     </div>
+</div>
+
+</div>
