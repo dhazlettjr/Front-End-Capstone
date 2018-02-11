@@ -1,38 +1,36 @@
-<div class="dropdown">
-    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        Choose Ride
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a ng-href="#!/type">
-            <option class="dropdown-item" ng-click="getRidesByType('car')">Car</option>
-        </a>
-        <option class="dropdown-item" ng-click="getRidesByType('truck')">Truck</option>
-        <option class="dropdown-item" ng-click="getRidesByType('boat')">Boat</option>
-        <option class="dropdown-item" ng-click="getRidesByType('bike')">Bike</option>
-        <option class="dropdown-item" ng-click="getRidesByType('ATV')">ATV</option>
-    </div>
-</div>
-
 <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" ng-model="rideType" type="search" placeholder="Search by type" aria-label="Search">
+        <input class="form-control mr-sm-2" ng-model="rideLocation" type="search" placeholder="Search by location" aria-label="Search">
+        <input  class="form-control mr-sm-2" ng-model="ridePrice" type="search" placeholder="Search by price" aria-label="Search">
+
+
     </form>
 </nav>
 
-<div ng-init="getAllRides()">
-    <ul ng-repeat="ride in rideArr">
-        <li>{{ride[1].location}}</li>
-        <li>{{ride[1].make}}</li>
-        <li>{{ride[1].model}}</li>
-        <li>{{ride[1].year}}</li>
-        <li>{{ride[1].price}}</li>
+<div ng-controller="mapCtrl">
+        <div id="map"></div>
+        <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+             <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+             <label id="names" >{{marker.title}}</label></a>
+        </div>
+    </div>
 
-        <img ng-src="{{ride[1].img}}">
-        <a ng-href="#!/details/{{ride[0]}}">
-            <button type="button" class="btn btn-info">See Ride Details</button>
-        </a>
-        <p>{{ride.id}}</p>
-    </ul>
+<div class="col-sm-3">
+    <div class="new" ng-init="getAllRides()">
+        <ul class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
+            <li>{{ride[1].type}}</li>
+            <li>{{ride[1].location}}</li>
+            <li>{{ride[1].make}}</li>
+            <li>{{ride[1].model}}</li>
+            <li>{{ride[1].year}}</li>
+            <li>{{ride[1].price}}</li>
+
+            <img class="pic" ng-src="{{ride[1].img}}">
+            <a ng-href="#!/details/{{ride[0]}}">
+                <button type="button" class="btn btn-info">See Ride Details</button>
+            </a>
+            <p>{{ride.id}}</p>
+        </ul>
+    </div>
 </div>
