@@ -1,0 +1,44 @@
+<div class="container">
+    <h1 class="brand"><span>RnR</span> Rental</h1>
+    <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+        <h3>RnR</h3>
+        <ul>
+          <li><i class="fa fa-road"></i> 44 Something st</li>
+          <li><i class="fa fa-phone"></i> (555) 555-5555</li>
+          <li><i class="fa fa-envelope"></i> test@test.test</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>Email Us</h3>
+        <form action="https://formspree.io/d.hazlett.jr@gmail.com" method="POST">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name">
+          </p>
+          <p>
+            <label>Company</label>
+            <input type="text" name="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="email" name="_replyto">
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone">
+          </p>
+          <input type="hidden" name="_subject" value="{{getData.type}} {{getData.make}} {{getData.model}} {{getData.price}} {{getData.location}}" />
+          <p class="full">
+            <label>Message</label>
+            <textarea   name="message" rows="5">{{getData.type}}</textarea>
+            
+          </p>
+          <p class="full">
+            <input type="submit" value="send">
+            <input type="hidden" name="_next" value="http://localhost:8080/#!/home" />
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -7,16 +7,8 @@
 
     </form>
 </nav>
-
-<div ng-controller="mapCtrl">
-        <div id="map"></div>
-        <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
-             <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
-             <label id="names" >{{marker.title}}</label></a>
-        </div>
-    </div>
-
-<div class="col-sm-3">
+<img class="img-fluid" alt="Responsive image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZnepj9gldDLPfLiiEGy7WceytFMFK6IdqFFCYS098okJqDxg7"></img>
+<div class="col-sm-12">
     <div class="new" ng-init="getAllRides()">
         <ul class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
             <li>{{ride[1].type}}</li>
@@ -26,7 +18,7 @@
             <li>{{ride[1].year}}</li>
             <li>{{ride[1].price}}</li>
 
-            <img class="pic" ng-src="{{ride[1].img}}">
+            <img class="img-fluid" alt="Responsive image" ng-src="{{ride[1].img}}">
             <a ng-href="#!/details/{{ride[0]}}">
                 <button type="button" class="btn btn-info">See Ride Details</button>
             </a>

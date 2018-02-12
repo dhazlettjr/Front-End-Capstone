@@ -1,5 +1,6 @@
 "use strict";
 
+
 let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
     AuthFactory.isAuthenticated()
     .then( (user) => {
@@ -56,9 +57,9 @@ angular.module("rent", ["ngRoute"])
         controller: 'editCtrl',
         resolve: {isAuth}
     })
-    .when ("/map", {
-        templateUrl: "partials/map.html",
-        controller: "mapCtrl"
+    .when ("/confirm", {
+        templateUrl: "partials/email.html",
+        controller: "emailCtrl"
     });
 
 })

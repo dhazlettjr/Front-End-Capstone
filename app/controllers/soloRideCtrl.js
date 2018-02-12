@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("rent")
-  .controller("soloRideCtrl", function ($scope, $routeParams, ProductsFactory) {
+  .controller("soloRideCtrl", function ($scope,$rootScope, $routeParams,$location, ProductsFactory) {
 console.log($routeParams.id);
 $scope.getSingleRide = (carID) => {
     console.log('car id?', carID);
@@ -12,5 +12,14 @@ $scope.getSingleRide = (carID) => {
     });
   };
   $scope.getSingleRide($routeParams.id);
+
+
+  $scope.goToEmail = () => {
+    $rootScope.ride = $scope.soloRide;
+    $location.path("/confirm");
+  };
     });
+
+
+
 
