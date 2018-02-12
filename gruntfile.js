@@ -3,7 +3,7 @@ module.exports = function(grunt) {
       "angular-builder": {
         options: {
           mainModule: "rent",
-          externalModules: ["ngRoute"]
+          externalModules: ["ngRoute", "ngMap"]
         },
         app: {
           src: "./app/**/*.js",

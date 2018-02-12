@@ -15,7 +15,7 @@ let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
     }); 
   });
 
-angular.module("rent", ["ngRoute"])
+angular.module("rent", ["ngRoute", "ngMap"])
 
 .config($routeProvider => {
     $routeProvider
@@ -60,6 +60,10 @@ angular.module("rent", ["ngRoute"])
     .when ("/confirm", {
         templateUrl: "partials/email.html",
         controller: "emailCtrl"
+    })
+    .when ("#!/map", {
+        templateUrl: "partials/map.html",
+        controller: "mapCtrl"
     });
 
 })
