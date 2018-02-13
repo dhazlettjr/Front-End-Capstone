@@ -61,7 +61,7 @@ angular.module("rent", ["ngRoute", "ngMap"])
         templateUrl: "partials/email.html",
         controller: "emailCtrl"
     })
-    .when ("#!/map", {
+    .when ("/map", {
         templateUrl: "partials/map.html",
         controller: "mapCtrl"
     });
