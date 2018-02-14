@@ -7,14 +7,17 @@
   padding-bottom: 14px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.logo {
-  float: right;
+  align-self: center;
 }
 
 nav {
   background: whitesmoke;
+}
+
+.logo{
+  height: 30px;
+  padding-top: 8px;
+  float: right;
 }
 
 
@@ -192,23 +195,43 @@ grid-template-columns: repeat(4,1fr);
 
  .listdetailsDetail{
    grid-column: 2;
-   grid-row: 1 / 4;
+   grid-row: 1 / 3;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
   font-style: italic;
   font-weight: bold;
   font-size: 18px;
+  padding-left: 10px;
 }
 
 .listfeaturesDetail{
   grid-column: 2;
-  grid-row: 4 / 9;
+  grid-row: 3 / 6;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
   font-style: italic;
   font-weight: bold;
   font-size: 18px;
+  padding-left: 10px;
 }
 
-// .object-fit_cover { object-fit: cover }
+.listlocationDetail{
+  grid-column: 2;
+  grid-row: 6 / 9;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.editBtn {
+  grid-column: 1;
+  grid-row: 4
+}
+
+.deleteBtn{
+  grid-column: 2;
+  grid-row: 4;
+}
 
 
 
@@ -324,7 +347,7 @@ a {
 
   .fixer {
       overflow: hidden;
-      background-color:whitesmoke;
+      background-color:darkgray;
       position: fixed;
       top: 0;
   }
