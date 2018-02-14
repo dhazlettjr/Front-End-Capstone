@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="search navbar navbar-light">
     <form class="form-inline">
         <input class="form-control mr-sm-2" ng-model="rideType" type="search" placeholder="Search by type" aria-label="Search">
         <input class="form-control mr-sm-2" ng-model="rideLocation" type="search" placeholder="Search by location" aria-label="Search">
@@ -7,22 +7,20 @@
 
     </form>
 </nav>
-<img class="img-fluid" alt="Responsive image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZnepj9gldDLPfLiiEGy7WceytFMFK6IdqFFCYS098okJqDxg7"></img>
-<div class="col-sm-12">
+<img class="img-fluid homeImage" alt="Responsive image" src="sass/img/homelogo.jpg"></img>
+<div class=" background col-sm-12">
     <div class="new" ng-init="getAllRides()">
-        <ul class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
-            <li>{{ride[1].type}}</li>
-            <li>{{ride[1].location}}</li>
-            <li>{{ride[1].make}}</li>
-            <li>{{ride[1].model}}</li>
-            <li>{{ride[1].year}}</li>
-            <li>{{ride[1].price}}</li>
+        <div class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
+            <p class="listmake">{{ride[1].make}}</p>
+            <p class="listmodel">{{ride[1].model}}</p>
+            <p class="listyear">{{ride[1].year}}</p>
+            <p class="listprice">{{ride[1].price}}</p>
 
             <img class="img-fluid" alt="Responsive image" ng-src="{{ride[1].img}}">
             <a ng-href="#!/details/{{ride[0]}}">
-                <button type="button" class="btn btn-info">See Ride Details</button>
+                <button type="button" class=" listButton btn btn-dark">See Ride Details</button>
             </a>
             <p>{{ride.id}}</p>
-        </ul>
+        </div>
     </div>
 </div>

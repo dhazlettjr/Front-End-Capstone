@@ -1,54 +1,42 @@
-// 'use strict';
+"use strict";
 
-// //code adapted from ...........
-// var cities = [
-//               {
-//                 city : 'Nashville',
-//                 desc : 'Music City',
-//                 lat : 36.174465, 
-//                 long : -86.767960
-//             }
-//           ];
+angular.module("rent")
+  .controller("mapCtrl", function ($scope,NgMap,$routeParams, ProductsFactory) {
 
-// angular.module("rent").controller("mapCtrl", function ($scope, FBCreds) {
+    // in order to place pins on the map, I needed to get the data for the pins
+    let getAllRides = () => {
 
-//     var mapOptions = {
-//         zoom: 4,
-//         center: new google.maps.LatLng(25,80),
-//         mapTypeId: google.maps.MapTypeId.TERRAIN
-//     };
+        //same as above comment
+        ProductsFactory.getAllRides()
+          .then((data) => {
+  
+            //object.entries is a simple way to push an object into an array
+            $scope.rideArr = Object.entries(data.data);
+            console.log('ride',$scope.rideArr);
+          });
 
-//     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+      };
+      //call the function to fire
+      getAllRides();
 
-//     $scope.markers = [];
-    
-//     var infoWindow = new google.maps.InfoWindow();
-    
-//     var createMarker = function (info){
-        
-//         var marker = new google.maps.Marker({
-//             map: $scope.map,
-//             position: new google.maps.LatLng(info.lat, info.long),
-//             title: info.city
-//         });
-//         marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
-        
-//         google.maps.event.addListener(marker, 'click', function(){
-//             infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
-//             infoWindow.open($scope.map, marker);
-//         });
-        
-//         $scope.markers.push(marker);
-        
-//     };
-    
-//     for (let i = 0; i < cities.length; i++){
-//         createMarker(cities[i]);
-//     }
+      //basic google map function to get the map, show the marker and get position
+    NgMap.getMap().then(function (map) {
+        $scope.showCustomMarker = function (evt) {
+            map.customMarkers.foo.setVisible(true);
+            map.customMarkers.foo.setPosition(this.getPosition());
+            
+        };
+        //function to close the marker
+        $scope.closeCustomMarker = function (evt) {
+            this.style.display = 'none';
+        };
 
-//     $scope.openInfoWindow = function(e, selectedMarker){
-//         e.preventDefault();
-//         google.maps.event.trigger(selectedMarker, 'click');
-//     };
-
-// });
+    });
+   $scope.getSingleRide = (carID) => {
+        ProductsFactory.getSingleRide(carID)
+          .then((info) => {
+            $scope.soloRide = info.data;
+          });
+          $scope.getSingleRide(carID);
+        };
+});

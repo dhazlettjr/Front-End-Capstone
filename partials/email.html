@@ -25,13 +25,18 @@
             <input type="email" name="_replyto">
           </p>
           <p>
+            <label>Requested Dates</label>
+            <input id="date" type="date" name="start date">
+            <input id="date" type="date" name="end date">
+          </p>
+          <p>
             <label>Phone Number</label>
             <input type="text" name="phone">
           </p>
           <input type="hidden" name="_subject" value="{{getData.type}} {{getData.make}} {{getData.model}} {{getData.price}} {{getData.location}}" />
           <p class="full">
             <label>Message</label>
-            <textarea   name="message" rows="5">{{getData.type}}</textarea>
+            <textarea   name="message" rows="5"></textarea>
             
           </p>
           <p class="full">

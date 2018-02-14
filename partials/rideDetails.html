@@ -1,14 +1,33 @@
-<div>
-    <div ng-model="soloRide">
-        <p>{{soloRide.make}}</p>
-        <p>{{soloRide.make}}</p>
-        <p>{{soloRide.model}}</p>
-        <p>{{soloRide.year}}</p>
-        <p>{{soloRide.price}}</p>
-    </div>
+<!-- 
+    <div class=" background col-sm-12">
+        <div class="new">
+            <div class="box" ng-model="soloRide">
+                <p class="listmake">{{soloRide.make}}</p>
+                <p class="listmodel">{{soloRide.model}}</p>
+                <p class="listyear">{{soloRide.year}}</p>
+                <p class="listprice">{{soloRide.price}}</p>
+            </div>
 
-    <img ng-src="{{soloRide.img}}">
-    
+            <img ng-src="{{soloRide.img}}">
+        </div>
         <button ng-click="goToEmail()" class="btn btn-primary">I Want This</button>
+    </div> -->
 
-</div>
+    <!-- <div class="background col-sm-12"> -->
+        <div class="detailPage">
+                <p class="listdetailsDetail">DESCRIPTION:{{soloRide.description}}</p>
+                <p class="listfeaturesDetail">FEATURES:{{soloRide.features}}</p>
+                <div class="detailBox" ng-model="soloRide">
+                    <p class="listmakeDetail">{{soloRide.make}}</p>
+                    <p class="listmodelDetail">{{soloRide.model}}</p>
+                    <p class="listyearDetail">{{soloRide.year}}</p>
+                    <p class="listpriceDetail">{{soloRide.price}}</p>
+                    
+                    <img class="img-fluid" alt="Responsive image" ng-src="{{soloRide.img}}">
+                    <button ng-click="goToEmail()" class="btn btn-primary">I Want This</button>
+                </div>
+            </div>
+                <dir-disqus class="chatBox" config="disqusConfig"></dir-disqus>
+        <!-- </div> -->
+
+

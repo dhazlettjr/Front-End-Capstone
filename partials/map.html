@@ -1,0 +1,7 @@
+<ng-map id="map" zoom="5" center="[37.0902, -95.7129]" style="height:600px" on-center-changed="centerCustomMarker()">
+    <marker ng-repeat="ride in rideArr" position="{{ride[1].location}}" on-click="getAllRides()"></marker>
+    <marker ng-repeat="ride in soloRide " position="{{ride.make}}, {{ride.model}}, {{ride.img}}" on-click="getSingleRide(ride.id)"></marker>
+</ng-map>
+
+
+
