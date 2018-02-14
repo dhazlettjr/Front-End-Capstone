@@ -1,13 +1,23 @@
-body {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.background {
+  background: whitesmoke;
 }
+.homeImage {
+  width: 100%;
+  max-height: 250px;
+  padding-bottom: 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  float: right;
+}
+
+nav {
+  background: whitesmoke;
+}
+
+
 
 #uploader {
     -webkit-appearance: none;
@@ -16,30 +26,191 @@ body {
     margin-bottom: 10px;
 }
 
-.ridegrid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-
-.angular-google-map-container {
-    height: 400px;
-}
 
 .new {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 5px;
+    grid-template-rows: repeat(3,1fr);
+
+    grid-gap: 8px;
+}
+.detailPage {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(8,1fr);
+}
+
+.detailBox {
+grid-column: 1;
+grid-row: 1 / 9;
+display: grid;
+grid-template-columns: repeat(4,1fr);
+
+}
+
+.detailBox img {
+  grid-column: 1/5;
+  grid-row: 1/3;
+  width: 100%;
+  height: 342px;
+  border: 2px solid black;
+  border-radius: 0px 45px 0px 45px;
+  align-self: center;
+
+}
+
+.chatBox {
+  grid-column: 1/4;
+  grid-row: 2;
+}
+
+.box img {
+  grid-column: 1/5;
+  grid-row: 1/3;
+  width: 100%;
+  height: 342px;
+  border: 2px solid black;
+  border-radius: 0px 45px 0px 45px;
+  align-self: center;
+
+}
+
+.box a {
+  grid-column: 4;
+  grid-row: 4;
 }
 
 .box {
-    border: 3px solid red;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  // grid-template-rows: repeat(4,1fr);
+  //position: relative;
+  grid-row-gap: 0;
 }
 
-.pic {
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
+.listmake{
+  grid-row: 3;
+  grid-column: 1;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+
+
+
 }
+
+.listmodel{
+  grid-row: 3;
+  grid-column: 2;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.listyear {
+  grid-row: 3;
+  grid-column: 3;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.listprice{
+  grid-row: 2;
+  grid-column: 4;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 1000;
+  background: whitesmoke;
+  justify-self: end;
+  align-self: end;
+  line-height: 2;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px 0px 0px 0px;
+  border-top: 2px black solid;
+  border-left: 2px black solid;
+}
+
+.listmakeDetail{
+  grid-row: 3;
+  grid-column: 1;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+
+
+
+}
+
+.listmodelDetail{
+  grid-row: 3;
+  grid-column: 2;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.listyearDetail {
+  grid-row: 3;
+  grid-column: 3;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.listpriceDetail{
+  grid-row: 2;
+  grid-column: 4;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 1000;
+  background: whitesmoke;
+  justify-self: end;
+  align-self: end;
+  line-height: 2;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px 0px 0px 0px;
+  border-top: 2px black solid;
+  border-left: 2px black solid;
+}
+
+ .listdetailsDetail{
+   grid-column: 2;
+   grid-row: 1 / 4;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.listfeaturesDetail{
+  grid-column: 2;
+  grid-row: 4 / 9;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+// .object-fit_cover { object-fit: cover }
+
+
 
 a {
     text-decoration: none;
@@ -51,33 +222,10 @@ a {
      display: inline;
      }
 
-.model {
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: blue;
-    text-shadow: 10mm;
-}
-
-.modal-background {
-    background-color: yellow;
-}
-
-
 //   new style 
 
-*{
-    box-sizing: border-box;
-  }
+
   
-  body{
-    background:#92bde7;
-    color:#485e74;
-    line-height:1.6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding:1em;
-  }
   
   .container{
     max-width:1170px;
@@ -91,7 +239,7 @@ a {
     padding:0;
   }
   
-  .brand{
+   .brand{
     text-align: center;
   }
   
@@ -176,7 +324,7 @@ a {
 
   .fixer {
       overflow: hidden;
-      background-color: #333;
+      background-color:whitesmoke;
       position: fixed;
       top: 0;
   }

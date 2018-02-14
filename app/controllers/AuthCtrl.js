@@ -37,5 +37,5 @@ angular
                     console.log("logged out", data);
                 });
         };
-         $scope.logout();
+        $scope.logout();
     });
