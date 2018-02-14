@@ -59,15 +59,21 @@ angular.module("rent", ["ngRoute","angularUtils.directives.dirDisqus", "ngMap"])
     })
     .when ("/confirm", {
         templateUrl: "partials/email.html",
-        controller: "emailCtrl"
+        controller: "emailCtrl",
+        resolve: {isAuth}
+
     })
     .when ("/map", {
         templateUrl: "partials/map.html",
-        controller: "mapCtrl"
+        controller: "mapCtrl",
+        resolve: {isAuth}
+
     })
     .when ("/review", {
         templateUrl: "partials/chat.html",
-        controller: "chatCtrl"
+        controller: "chatCtrl",
+        resolve: {isAuth}
+
     });
 
 })
