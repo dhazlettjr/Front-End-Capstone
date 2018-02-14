@@ -15,7 +15,7 @@ let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
     }); 
   });
 
-angular.module("rent", ["ngRoute", "ngMap"])
+angular.module("rent", ["ngRoute","angularUtils.directives.dirDisqus", "ngMap"])
 
 .config($routeProvider => {
     $routeProvider
@@ -64,6 +64,10 @@ angular.module("rent", ["ngRoute", "ngMap"])
     .when ("/map", {
         templateUrl: "partials/map.html",
         controller: "mapCtrl"
+    })
+    .when ("/review", {
+        templateUrl: "partials/chat.html",
+        controller: "chatCtrl"
     });
 
 })
