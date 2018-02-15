@@ -2,7 +2,7 @@
 </nav> -->
 <img class="img-fluid homeImage" alt="Responsive image" src="sass/img/homelogo.jpg"></img>
 
-<div class="background" class="col-sm-12">
+<div class="background col-sm-12">
     <div class="new">
     <div class="box" ng-repeat="ride in rideArr">
         <p class="listmake">{{ride.make}}</p>
@@ -11,8 +11,8 @@
         <p class="listprice">{{ride.price}}</p>
 
         <img ng-src="{{ride.img}}">
-        <button ng-click="deleteRides(ride.id)" type="button" class="btn btn-danger">Delete</button>
-        <button class="btn btn-info">
+        <button ng-click="deleteRides(ride.id)" type="button" class="btn btn-danger deleteBtn">Delete</button>
+        <button class="btn btn-warning editBtn">
             <a ng-href="#!/list/{{ride.id}}/edit">Edit</a>
         </button>
 </div>
@@ -21,11 +21,11 @@
 
 
 
-            <img class="img-fluid" alt="Responsive image" ng-src="{{ride[1].img}}">
+            <!-- <img class="img-fluid" alt="Responsive image" ng-src="{{ride[1].img}}">
             <a ng-href="#!/details/{{ride[0]}}">
                 <button type="button" class=" listButton btn btn-dark">See Ride Details</button>
             </a>
             <p>{{ride.id}}</p>
         </div>
     </div>
-</div>
+</div> -->

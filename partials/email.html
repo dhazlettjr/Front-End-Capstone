@@ -1,12 +1,12 @@
 <div class="container">
-    <h1 class="brand"><span>RnR</span> Rental</h1>
+    <h1 class="brand"><span>RnR Rental</span></h1>
     <div class="wrapper animated bounceInLeft">
       <div class="company-info">
         <h3>RnR</h3>
         <ul>
-          <li><i class="fa fa-road"></i> 44 Something st</li>
+          <li><i class="fa fa-road"></i> 500 Interstate Blvd.</li>
           <li><i class="fa fa-phone"></i> (555) 555-5555</li>
-          <li><i class="fa fa-envelope"></i> test@test.test</li>
+          <li><i class="fa fa-envelope"></i> RnR.com</li>
         </ul>
       </div>
       <div class="contact">
@@ -33,6 +33,7 @@
             <label>Phone Number</label>
             <input type="text" name="phone">
           </p>
+          <input type="hidden" name="_cc" value="dhazlett14@gmail.com" />
           <input type="hidden" name="_subject" value="{{getData.type}} {{getData.make}} {{getData.model}} {{getData.price}} {{getData.location}}" />
           <p class="full">
             <label>Message</label>
@@ -40,10 +41,11 @@
             
           </p>
           <p class="full">
-            <input type="submit" value="send">
+            <input type="submit" class="btn btn-dark" value="send">
             <input type="hidden" name="_next" value="http://localhost:8080/#!/home" />
           </p>
         </form>
       </div>
     </div>
   </div>
+  
