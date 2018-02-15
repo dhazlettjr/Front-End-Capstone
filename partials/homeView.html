@@ -11,15 +11,15 @@
 
 <div class=" background col-sm-12">
     <div class="new" ng-init="getAllRides()">
-        <div class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
+    <div class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
             <p class="listmake">{{ride[1].make}}</p>
             <p class="listmodel">{{ride[1].model}}</p>
             <p class="listyear">{{ride[1].year}}</p>
             <p class="listprice">{{ride[1].price}}</p>
 
-            <img class="img-fluid" alt="Responsive image" ng-src="{{ride[1].img}}">
+            <img alt="Responsive image" ng-src="{{ride[1].img}}">
             <a ng-href="#!/details/{{ride[0]}}">
-                <button type="button" class=" listButton btn btn-dark">See Ride Details</button>
+                <button type="button" class=" btn btn-dark">See Ride Details</button>
             </a>
             <p>{{ride.id}}</p>
         </div>

@@ -1,20 +1,20 @@
+<div class="detailPage">
+    <p class="listdetailsDetail">DESCRIPTION:
+        <br>{{soloRide.description}}</p>
+    <p class="listfeaturesDetail">FEATURES:
+        <br>{{soloRide.features}}</p>
+    <p class="listlocationDetail">LOCATION:{{soloRide.location}}</p>
 
-        <div class="detailPage">
-                <p class="listdetailsDetail">DESCRIPTION:<br>{{soloRide.description}}</p>
-                <p class="listfeaturesDetail">FEATURES:<br>{{soloRide.features}}</p>
-                <p class="listlocationDetail">LOCATION:{{soloRide.location}}</p>
+    <div class="detailBox" ng-model="soloRide">
+        <p class="listmakeDetail">{{soloRide.make}}</p>
+        <p class="listmodelDetail">{{soloRide.model}}</p>
+        <p class="listyearDetail">{{soloRide.year}}</p>
+        <p class="listpriceDetail">{{soloRide.price}}</p>
 
-                <div class="detailBox" ng-model="soloRide">
-                    <p class="listmakeDetail">{{soloRide.make}}</p>
-                    <p class="listmodelDetail">{{soloRide.model}}</p>
-                    <p class="listyearDetail">{{soloRide.year}}</p>
-                    <p class="listpriceDetail">{{soloRide.price}}</p>
-                    
-                    <img class="img-fluid" alt="Responsive image" ng-src="{{soloRide.img}}">
-                    <button ng-click="goToEmail()" class="btn btn-dark">I Want This</button>
-                </div>
-            </div>
-                <dir-disqus class="chatBox" config="disqusConfig"></dir-disqus>
-        <!-- </div> -->
-
-
+        <img class="img-fluid" alt="Responsive image" ng-src="{{soloRide.img}}">
+        <button ng-click="goToEmail()" class=" rentBtn btn btn-dark">I Want This</button>
+    </div>
+</div>
+<div class='review'>
+    <dir-disqus class="chatBox" config="disqusConfig"></dir-disqus>
+</div>
