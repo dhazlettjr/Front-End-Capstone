@@ -2,6 +2,11 @@
   background: whitesmoke;
 }
 
+.newRideTitle {
+  font-family: Eatn Cake;
+
+}
+
 .homeImage {
   width: 100%;
   max-height: 250px;
@@ -9,6 +14,7 @@
   margin-left: auto;
   margin-right: auto;
   align-self: center;
+  opacity: 0.6;
 }
 
 nav {
@@ -25,7 +31,11 @@ nav {
 .logo {
   height: 30px;
   padding-top: 8px;
-  float: right;
+  margin-left: 300px;
+}
+
+.navLinkColor {
+color: black;
 }
 
 #uploader {
@@ -177,7 +187,6 @@ nav {
   margin: 0;
   border-radius: 20px 0px 0px 0px;
   border-top: 2px black solid;
-  border-left: 2px black solid;
 }
 
 //STYLE FOR DETAILS PAGE
@@ -396,13 +405,16 @@ ul {
 
 .fixer {
   overflow: hidden;
-  background-color: darkgray;
+  background-color:whitesmoke;
   position: fixed;
-  top: 0;
+  border: black solid 2px;
+  border-radius: 0px 20px 0px 0px;
+  font-family: 'Eatn Cake';
+  font-weight: bold;
 }
 
 .active {
-  color: red;
+  color: black;
 }
 
 .landingimage {
@@ -418,8 +430,32 @@ ul {
   width: 1000px;
   box-shadow: 3px 3px 10px gray;
   padding-bottom: 1em;
+  margin-left: 200px;
 }
 
 #markerStyle {
   background-color: snow;
+}
+
+// STYLE FOR LISTING ITEMS PAGE
+
+.listRental {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.listRentalBorder {
+  grid-column: 1/10;
+  grid-row: 1/5;
+  border: silver 5px solid;
+  border-radius: 0px 40px 0px 40px; // margin-top: 50px;
+  // margin-bottom: 50px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.firebaseSubmit {
+  grid-column: 1;
+  grid-row: 4;
 }
