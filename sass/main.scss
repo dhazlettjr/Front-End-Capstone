@@ -1,6 +1,8 @@
 .background {
   background: whitesmoke;
+
 }
+
 
 .newRideTitle {
   font-family: Eatn Cake;
@@ -49,13 +51,14 @@ color: black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 30px;
 }
 
 .detailPage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  margin-left: 50px;
 }
 
 // LOGIN STYLE WITH GRID
@@ -150,7 +153,7 @@ color: black;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: italic;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .listmodel {
@@ -159,7 +162,7 @@ color: black;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: italic;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .listyear {
@@ -168,7 +171,7 @@ color: black;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: italic;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .listprice {
@@ -197,6 +200,7 @@ color: black;
   font-style: italic;
   font-weight: bold;
   font-size: 18px;
+  
 }
 
 .detailBox {
@@ -240,7 +244,6 @@ color: black;
   margin: 0;
   border-radius: 20px 0px 0px 0px;
   border-top: 2px black solid;
-  border-left: 2px black solid;
 }
 
 .listdetailsDetail {
@@ -251,6 +254,8 @@ color: black;
   font-weight: bold;
   font-size: 18px;
   padding-left: 10px;
+  border: solid 2px black;
+  margin-left: 10px;
 }
 
 .listfeaturesDetail {
@@ -261,6 +266,8 @@ color: black;
   font-weight: bold;
   font-size: 18px;
   padding-left: 10px;
+  border: solid 2px black;
+  margin-left: 10px;
 }
 
 .listlocationDetail {
@@ -271,6 +278,7 @@ color: black;
   font-weight: bold;
   font-size: 18px;
   padding-left: 10px;
+  margin-left: 10px;
 }
 
 .editBtn {
@@ -426,11 +434,24 @@ ul {
 }
 
 #map {
-  height: 700px;
-  width: 1000px;
+  height: 1600px;
+  width: 1200px;
   box-shadow: 3px 3px 10px gray;
   padding-bottom: 1em;
-  margin-left: 200px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+
+
+#mapSingle {
+  height: 200px;
+  width: 350px;
+  box-shadow: 3px 3px 10px gray;
+  padding-bottom: 1em;
+  margin-left: 75px;
+  grid-column: 2;
+  grid-row: 7 / 11;
 }
 
 #markerStyle {

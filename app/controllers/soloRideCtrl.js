@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("rent")
-  .controller("soloRideCtrl", function ($scope, $rootScope, $routeParams, $location, ProductsFactory) {
+  .controller("soloRideCtrl", function ($scope, $rootScope,NgMap, $routeParams, $location, ProductsFactory) {
 
      //configuration for disqus to talk to your app
      $scope.disqusConfig = {
