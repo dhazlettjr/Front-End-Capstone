@@ -37,10 +37,16 @@ angular.module("rent").controller("ListCtrl", function ($scope, $location, Stora
             $location.url("/list");
             // this only deletes the car with that ID
             $scope.newList.uid = firebase.auth().currentUser.uid;
-            ProductsFactory.saveRides($scope.newList)
+            ProductsFactory.getCoordinatesFromLocation($scope.newList.location).then( (data)=>{
+                console.log('what is this data', data);
+                $scope.newList.long = data.results[0].geometry.location.lng;
+                $scope.newList.lat = data.results[0].geometry.location.lat;
+                console.log('newlist',$scope.newList);
+                ProductsFactory.saveRides($scope.newList)
                 .then((data) => {
-            // once data is saved, it will return you to the home page
+                    // once data is saved, it will return you to the home page
                     $location.url("/home");
+                });
 
                 });
             console.log('new ride to save', $scope.newList);

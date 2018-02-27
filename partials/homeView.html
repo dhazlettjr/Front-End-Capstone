@@ -14,7 +14,7 @@
     <div class="box" ng-repeat="ride in rideArr | filter: {type: rideType} | filter: {location: rideLocation} | filter: {price: ridePrice}">
             <p class="listmake">{{ride[1].make}}</p>
             <p class="listmodel">{{ride[1].model}}</p>
-            <p class="listyear">{{ride[1].year}}</p>
+            <p class="listyear">{{ride[1].location}}</p>
             <p class="listprice">{{ride[1].price}}</p>
 
             <img alt="Responsive image" ng-src="{{ride[1].img}}">

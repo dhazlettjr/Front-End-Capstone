@@ -23,6 +23,16 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
         });
     };
 
+    let getCoordinatesFromLocation = (location)=>{
+        return $q((resolve, reject)=>{
+          $http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location},US&key=`)
+          .then(({data})=>{
+            console.log('data from getcoordsfromlocation:',data);
+            resolve(data);
+          });
+        });
+      };
+
     let getRidesByType = (type) => {
 
         return $q(function (resolve, reject) {
@@ -123,6 +133,7 @@ angular.module("rent").factory("ProductsFactory", function ($q, $http, FBCreds) 
         getAllRides,
         getRidesByType,
         getSingleRide,
-        updateRide
+        updateRide,
+        getCoordinatesFromLocation
     };
 });

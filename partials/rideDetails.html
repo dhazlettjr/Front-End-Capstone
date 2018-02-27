@@ -5,6 +5,10 @@
         <br>{{soloRide.features}}</p>
     <p class="listlocationDetail">LOCATION:{{soloRide.location}}</p>
 
+    <ng-map  id="mapSingle" zoom="15" center="[{{soloRide.lat}}, {{soloRide.long}}]">
+        <marker position="[{{soloRide.lat}}, {{soloRide.long}}]"></marker>
+        </ng-map>
+
     <div class="detailBox" ng-model="soloRide">
         <p class="listmakeDetail">{{soloRide.make}}</p>
         <p class="listmodelDetail">{{soloRide.model}}</p>
